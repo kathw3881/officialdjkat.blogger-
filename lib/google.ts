@@ -125,6 +125,12 @@ export function updatePost(postId: string, title: string, content: string, label
   });
 }
 
+export function publishPost(postId: string) {
+  return bloggerFetch(`/blogs/${encodeURIComponent(bloggerBlogId())}/posts/${encodeURIComponent(postId)}/publish`, {
+    method: "POST",
+  });
+}
+
 export function deletePost(postId: string) {
   return bloggerFetch(`/blogs/${encodeURIComponent(bloggerBlogId())}/posts/${encodeURIComponent(postId)}`, {
     method: "DELETE",
